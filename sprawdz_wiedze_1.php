@@ -280,60 +280,82 @@ echo"<br>";
      echo "Liczba autorów: ".count(array_keys($tA))." "."oraz liczba książek: $ilosKsiazek";
      echo"<br>";
 
-/*
-    10. Dla poniższych tablic z użyciem odpowiednich operatorów:
+
+    //10. Dla poniższych tablic z użyciem odpowiednich operatorów:
 
     $t1 = [10,"11",12];
     $t2 = [11, "11", 13, 15];
     $t3 = [12, "11", 10];
 
-    a) przypisz do zmiennej unię tablic $t1 i $t2 oraz wypisz tą zmienną
-    b) sprawdź czy $t1 i $t3 są identyczne i wypisz wynik testu
-    c) sprawdź czy $t1 i $t3 nie są takie same i wypisz wynik testu
-    d) sprawdź czy $t1 i $t3 są takie same i wypisz wynik testu
-*/
+    //a) przypisz do zmiennej unię tablic $t1 i $t2 oraz wypisz tą zmienną
+    $ut = array_merge($t1, $t2);
+    print_r($ut);
+    //b) sprawdź czy $t1 i $t3 są identyczne i wypisz wynik testu
+    if ($t1 === $t3){
+        echo "Tablice są identyczne";
+    } else {
+        echo "Tablice nie są identyczne";
+    }
+    //c) sprawdź czy $t1 i $t3 nie są takie same i wypisz wynik testu
+    if ($t1 !== $t3){
+        echo "Tablice nie są takie same";
+    } else {
+        echo "Tablice są takie same";
+    }
+    //d) sprawdź czy $t1 i $t3 są takie same i wypisz wynik testu
+    if ($t1 == $t3){
+        echo "Tablice są takie same";
+    } else {
+        echo "Tablice nie są takie same";
+    }
+    echo"<br>";
+
 
 #11 Ze zmiennej $txt utwórz tablicę fraz rozdzielając je po ",". Wykorzystaj funkcję explode();  Wypisz otrzymaną tablicę;
 
     $txt = "Iglo,Bułki,Papaya,Cukier trzcinowy";
 
 
-/*
-    12. Dla poniższych tablic z użyciem odpowiednich funkcji:
+
+    //12. Dla poniższych tablic z użyciem odpowiednich funkcji:
 
     $a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
     $a2=array("e"=>"red","f"=>"black","g"=>"purple");
     $a3=array("a"=>"red","b"=>"black","h"=>"yellow");
     
 
-    a) do zmiennej przypisz wynik połączenia tablic $a1 i $a2 (array_merge()) i wypisz go
-    b) wypisz różnicę pomiędzy tabelami $a2 i $a3 (array_diff())
-    c) wypisz wszystkie wartości tablicy $a2 (array_values)
-    c) wypisz wszystkie klucze tablicy $a1 (array_keys)
-    c) wyszukaj czy w tablicy $a3 występuje wartość "red"
-    d) wyszukaj czy w tablicy $a3 występuje kluc "d"
-    
-*/
+    //a) do zmiennej przypisz wynik połączenia tablic $a1 i $a2 (array_merge()) i wypisz go
+    $poloczenie = array_merge($a1, $a2);
+    print_r($poloczenie);
+    //b) wypisz różnicę pomiędzy tabelami $a2 i $a3 (array_diff())
+    $diff = array_diff($a2, $a3);
+    print_r($diff);
+    //c) wypisz wszystkie wartości tablicy $a2 (array_values)
+    $values = array_values($a2);
+    print_r($values);
+    //c) wypisz wszystkie klucze tablicy $a1 (array_keys)
+    $keys = array_keys($a1);
+    print_r($keys);
+    //c) wyszukaj czy w tablicy $a3 występuje wartość "red"
+    if (in_array("red", $a3)) {
+        echo "Wartość 'red' występuje w tablicy <br> ";
+    } else {
+        echo "Wartość 'red' nie występuje w tablicy <br> ";
+    }
+    //d) wyszukaj czy w tablicy $a3 występuje kluc "d"
+    if (array_key_exists("d", $a3)) {
+        echo "Klucz 'd' występuje w tablicy <br> ";
+    } else {
+        echo "Klucz 'd' nie występuje w tablicy <br> ";
+    }
+    //g) wypisz tablicę od 3 elementu do końca (array_slice)
+    $slice = array_slice($a1, 2);
+    print_r($slice);
 
 
-/*
-    13. Dla poniższych tablic z użyciem odpowiednich funkcji:
 
-    $a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
-    $a2=array("e"=>"red","f"=>"black","g"=>"purple");
-    $a3=array("a"=>"red","b"=>"black","h"=>"yellow");
-    
 
-    a) do zmiennej przypisz wynik połączenia tablic $a1 i $a2 (array_merge()) i wypisz go
-    b) wypisz różnicę pomiędzy tabelami $a2 i $a3 (array_diff())
-    c) wypisz wszystkie wartości tablicy $a2 (array_values)
-    d) wypisz wszystkie klucze tablicy $a1 (array_keys)
-    e) sprawdź czy w tablicy $a3 występuje wartość "red"
-    f) sprawdź czy w tablicy $a3 występuje klucz "d"
-    g) wypisz tablicę od 3 elementu do końca (array_slice)
 
-    
-*/
 
 
 
